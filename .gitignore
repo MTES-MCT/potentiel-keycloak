@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Intellij
+.idea
+
+# temp files
+temp/
+tmp/ 
+
+# Mac
+.DS_Store
