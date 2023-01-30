@@ -87,6 +87,3 @@ Pour mettre à jour l'environnement partagé il faut :
 - avoir ajouté dans les remotes git l'url du repo fourni par Scalingo ([ici](https://dashboard.scalingo.com/apps/osc-secnum-fr1/keycloak-potentiel/deploy/config))
 - lancer la commande (depuis un terminal local) : `git push **nom_remote** main:master`
   (exemple : `git push scalingo main:master`)
-
-
-(TEST)
