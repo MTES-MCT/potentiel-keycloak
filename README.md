@@ -18,6 +18,7 @@ Il existe deux environnements pour keycloak :
   - [Configuration de l'authentification à double facteur pour un role précis](#configuration-de-lauthentification-à-double-facteur-pour-un-role-précis)
     - [Créer un nouveau flow `Browser`](#créer-un-nouveau-flow-browser)
     - [Affecter le flow Browser au flow nouvellement créé](#affecter-le-flow-browser-au-flow-nouvellement-créé)
+  - [Ajouter une configuration 2FA pour un nouveau rôle](#ajouter-une-configuration-2fa-pour-un-nouveau-rôle)
   - [Déployer une modification en production](#déployer-une-modification-en-production)
 
 Pour en savoir plus sur l'utilisation en local, veuillez vous rendre sur la page [`https://github.com/MTES-MCT/potentiel/docs/KEYCLOAK.md`](https://github.com/MTES-MCT/potentiel/blob/master/docs/KEYCLOAK.md)
@@ -86,3 +87,6 @@ Pour mettre à jour l'environnement partagé il faut :
 - avoir ajouté dans les remotes git l'url du repo fourni par Scalingo ([ici](https://dashboard.scalingo.com/apps/osc-secnum-fr1/keycloak-potentiel/deploy/config))
 - lancer la commande (depuis un terminal local) : `git push **nom_remote** main:master`
   (exemple : `git push scalingo main:master`)
+
+
+(TEST)
