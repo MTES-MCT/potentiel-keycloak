@@ -79,9 +79,9 @@ Dans les actions de la ligne nouvellement créée, choisir la `config` dans les 
 
 ## Déployer une modification en production
 
-Ce repository n'ayant pas encore de github action, on ne peut pas automatiquement mettre à jour les environnements de production et de staging.
+Ce repo dispose d'une automatisation de mise en production sur notre hébergeur [Scalingo](https://scalingo.com/fr). La configuration est faite directement dans le dashboard Scalingo, donc le repo sur Scalingo va se mettre à jour dès qu'un push est fait sur la branche `main`.
 
-Pour mettre à jour l'environnement partagé il faut :
+💡 Il est cependant possible de déployer manuellement au besoin. Pour celà, il suivit de suivre ces étapes :
 
 - avoir ce repository cloné en local
 - avoir ajouté dans les remotes git l'url du repo fourni par Scalingo ([ici](https://dashboard.scalingo.com/apps/osc-secnum-fr1/keycloak-potentiel/deploy/config))
