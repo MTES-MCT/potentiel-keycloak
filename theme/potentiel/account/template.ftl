@@ -191,7 +191,7 @@
               <p class="fr-logo" title="république française">
                 Ministère<br />
                 de la transition<br />
-                écologique
+                énergétique
               </p>
             </div>
             <div class="fr-footer__content">
