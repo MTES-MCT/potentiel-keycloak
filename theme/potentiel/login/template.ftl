@@ -116,13 +116,11 @@
         <div class="fr-container">
           <div class="fr-footer__body">
             <div class="fr-footer__brand fr-enlarge-link">
-              <a href="/" title="Retour à l’accueil">
-                <p class="fr-logo" title="république française">
-                  Ministère<br />
-                  de la transition<br />
-                  écologique
-                </p>
-              </a>
+              <p class="fr-logo" title="république française">
+                Ministère<br />
+                de la transition<br />
+                énergétique
+              </p>
             </div>
             <div class="fr-footer__content">
               <p class="fr-footer__content-desc">
