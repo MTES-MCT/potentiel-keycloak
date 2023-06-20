@@ -10,7 +10,6 @@
                 <#if message?has_content>
                     <#if message.type == 'error'>
                     <div class="notification error">${kcSanitize(message.summary)?no_esc}</div>
-                    <div class="notification warning" style="margin-top: 20px">Pour des raisons de sécurité, les mots de passes ont été remis à zéro le 7 octobre. Si vous n'avez pas mis à jour votre mot de passe depuis cette date, merci d'utiliser le lien "Mot de passe oublié".</div>
                     <#elseif message.type == 'warning'>
                     <div class="notification warning">${kcSanitize(message.summary)?no_esc}</div>
                     <#else>
@@ -63,7 +62,7 @@
                   </div>
 
                 <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
-                    <div id="kc-registration-container" style="margin-top: 30px">
+                    <div id="kc-registration-container" class="mt-4">
                         <div id="kc-registration">
                             <span>${msg("noAccount")} <a tabindex="6" href="${properties.potentielUrl}/signup.html">Je crée mon compte Potentiel</a></span>
                         </div>
