@@ -1,0 +1,21 @@
+/*
+* CUSTOM
+*/
+
+/* Text */
+.text-black {
+  color: black;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* Sizing */
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}

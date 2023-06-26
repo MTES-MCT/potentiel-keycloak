@@ -1,68 +1,35 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='account' bodyClass='user'; section>
-
-    <h1>${msg("editAccountHtmlTitle")}</h1>
-    <#if message?has_content>
-    <div class="fr-alert fr-alert--${message.type} fr-alert--sm fr-mb-3w">
-      <p class="fr-alert__title">${kcSanitize(message.summary)?no_esc}</p>
+  <form action="${url.accountUrl}" class="${properties.kcFormClass!}" method="post">
+    <h2 class="fr-mb-4v">${msg("editAccountHtmlTitle")}</h2>
+    <#--  <span class="required">*</span> ${msg("requiredFields")}</span>  -->
+    <div class="${properties.kcAlertClass!} ${properties.kcAlertInfoClass!} fr-mb-8v">
+      L'édition du compte n'est pas encore possible.
     </div>
-    </#if>
-    <#--  <span>${msg("allFieldsRequired")}</span>  -->
-    <div class="fr-alert fr-alert--info fr-alert--sm fr-mb-3w">
-      <p class="fr-alert__title">
-        L'édition des nom et prénom du compte n'est pas encore possible.
-      </p>
+    <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}" />
+    <div class="${properties.kcFormGroupClass!} fr-input-group--disabled ${messagesPerField.printIfExists('email','has-error')}">
+      <label for="email" class="${properties.kcLabelClass!}">${msg("email")}</label>
+      <input type="text" class="${properties.kcInputClass!}" disabled id="email" name="email" autofocus value="${(account.email!'')}"/>
     </div>
 
-    <div>${msg("email")} : ${(account.email!'')}</div>
+    <div class="${properties.kcFormGroupClass!} fr-input-group--disabled ${messagesPerField.printIfExists('firstName','has-error')}">
+      <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
+      <input type="text" class="${properties.kcInputClass!}" disabled id="firstName" name="firstName" value="${(account.firstName!'')}"/>
+    </div>
 
-    <form action="${url.accountUrl}" class="fr-py-2w" method="post">
-        <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
+    <div class="${properties.kcFormGroupClass!} fr-input-group--disabled ${messagesPerField.printIfExists('lastName','has-error')}">
+      <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")}</label>
+      <input type="text" class="${properties.kcInputClass!}" disabled id="lastName" name="lastName" value="${(account.lastName!'')}"/>
+    </div>
 
-        <div class="fr-input-group fr-input-group--disabled ${messagesPerField.printIfExists('lastName','fr-input-group--error')}">
-          <label for="lastName" class="fr-label">Nom, Prénom</label>
-          <input
-            type="text"
-            class="fr-input ${messagesPerField.printIfExists('lastName','fr-input--error')}"
-            aria-describedby="lastName-input-error-desc-error"
-            id="lastName"
-            name="lastName"
-            autofocus
-            disabled
-            value="${(account.lastName!'')}"
-          />
-          <#if messagesPerField.existsError('lastName')>
-          <p id="lastName-input-error-desc-error" class="fr-error-text">
-            ${messagesPerField.get('lastName')}
-          </p>
-          </#if>
+    <div class="${properties.kcFormGroupClass!} fr-input-group--disabled flex items-center gap-6 fr-mt-8v">
+        <div id="kc-form-buttons" class="submit">
+          <div class="">
+            <#if url.referrerURI??><a href="${url.referrerURI}">${kcSanitize(msg("backToApplication")?no_esc)}</a></#if>
+            <button disabled type="submit" class="${properties.kcButtonClass!}" name="submitAction" value="Save">${msg("doSave")}</button>
+            <button disabled type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonSecondaryClass!}" name="submitAction" value="Cancel">${msg("doCancel")}</button>
+          </div>
         </div>
-
-        <ul class="fr-btns-group fr-input-group--disabled fr-btns-group--inline">
-          <li>
-            <button
-              type="submit"
-              class="fr-btn"
-              name="submitAction"
-              value="Save"
-              disabled
-            >
-              ${msg("doSave")}
-            </button>
-          </li>
-          <li>
-            <button
-              type="submit"
-              class="fr-btn fr-btn--secondary"
-              name="submitAction"
-              value="Cancel"
-              disabled
-            >
-              ${msg("doCancel")}
-            </button>
-          </li>
-        </ul>
-      </fieldset>
-    </form>
-
+    </div>
+  </form>
 </@layout.mainLayout>
