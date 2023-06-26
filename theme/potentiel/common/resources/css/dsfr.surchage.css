@@ -59,3 +59,8 @@ a[href]:hover {
   -webkit-mask-image: url('../icons/system/logout-box-r-line.svg');
   mask-image: url('../icons/system/logout-box-r-line.svg');
 }
+
+.fr-header .fr-btn,
+.fr-header .fr-nav__link {
+  font-weight: 400;
+}
