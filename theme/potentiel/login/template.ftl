@@ -12,8 +12,6 @@
               <link href="${url.resourcesCommonPath}/${style}" rel="stylesheet" />
           </#list>
       </#if>
-      <script src="${url.resourcesCommonPath}/js/dsfr.module.min.js" type="module" defer></script>
-      <script src="${url.resourcesCommonPath}/js/dsfr.nomodule.min.js" type="text/javascript" defer></script>
       <meta name="theme-color" content="#000091" />
       <link rel="apple-touch-icon" href="${url.resourcesCommonPath}/favicon/apple-touch-icon.png" />
       <link rel="icon" href="${url.resourcesCommonPath}/favicon/favicon.svg" type="image/svg+xml" />
@@ -30,23 +28,20 @@
                   <div class="fr-header__logo">
                     <p class="fr-logo">République <br>Française</p>
                   </div>
-                  <div class="fr-header__navbar">
-                    <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu">Menu</button>
-                  </div>
+                  <div class="fr-header__navbar"> <button class="fr-btn--menu fr-btn" data-fr-opened="false"
+                      aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu"> Menu </button> </div>
                 </div>
-                <div class="fr-header__service">
-                <a href="${properties.potentielUrl}" title="Accueil - Potentiel - Ministère de la transition énergétique">
-                  <p class="fr-header__service-title">Potentiel</p>
-                </a>
+                <div class="fr-header__service"> <a href="${properties.potentielUrl}"
+                    title="Accueil - Potentiel - Ministère de la transition énergétique">
+                    <p class="fr-header__service-title">Potentiel</p>
+                  </a>
                   <p class="fr-header__service-tagline">Facilite le parcours des producteurs<br />d'énergies renouvelables électriques</p>
                 </div>
               </div>
               <div class="fr-header__tools">
                 <div class="fr-header__tools-links">
                   <ul class="fr-btns-group">
-                    <li>
-                      <a class="fr-btn fr-icon-add-circle-line"  target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Aide</a>
-                    </li>
+                    <li><a class="fr-btn fr-icon-add-circle-line"  target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Aide</a></li>
                   </ul>
                 </div>
               </div>
@@ -54,17 +49,14 @@
           </div>
         </div>
         <div class="fr-header__menu fr-modal" id="modal-499" aria-labelledby="button-500">
-          <div class="fr-container">
-              <button class="fr-btn--close fr-btn" aria-controls="modal-499" title="Fermer">
-                  Fermer
-              </button>
-              <div class="fr-header__menu-links">
-              </div>
-              <nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
-              </nav>
+          <div class="fr-container"> <button class="fr-btn--close fr-btn" aria-controls="modal-499" title="Fermer"> Fermer
+            </button>
+            <div class="fr-header__menu-links"> </div>
           </div>
         </div>
       </header>
+
+
       <main role="main">
         <section class="fr-py-20v">
           <#nested "form">
@@ -132,6 +124,8 @@
           </div>
         </footer>
       </div>
+      <script src="${url.resourcesCommonPath}/js/dsfr.module.min.js" type="module"></script>
+      <script src="${url.resourcesCommonPath}/js/dsfr.nomodule.min.js" type="text/javascript" nomodule></script>
     </body>
   </html>
 </#macro>

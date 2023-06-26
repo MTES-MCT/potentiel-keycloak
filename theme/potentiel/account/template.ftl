@@ -17,8 +17,7 @@
             <link href="${url.resourcesCommonPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
-    <script src="${url.resourcesCommonPath}/js/dsfr.module.min.js" type="module"></script>
-    <script src="${url.resourcesCommonPath}/js/dsfr.nomodule.min.js" type="text/javascript"></script>
+
     <title>
       ${msg("accountManagementTitle")}
     </title>
@@ -33,33 +32,26 @@
                 <div class="fr-header__logo">
                   <p class="fr-logo">République <br>Française</p>
                 </div>
-                <div class="fr-header__navbar">
-                  <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu">Menu</button>
-                </div>
+                <div class="fr-header__navbar"> <button class="fr-btn--menu fr-btn" data-fr-opened="false"
+                    aria-controls="modal-491" aria-haspopup="menu" id="button-492" title="Menu"> Menu </button> </div>
               </div>
-              <div class="fr-header__service">
-              <a href="${properties.potentielUrl}" title="Accueil - Potentiel - Ministère de la transition énergétique">
-                <p class="fr-header__service-title">Potentiel</p>
-              </a>
+              <div class="fr-header__service"> <a href="${properties.potentielUrl}"
+                  title="Accueil - Potentiel - Ministère de la transition énergétique">
+                  <p class="fr-header__service-title">Potentiel</p>
+                </a>
                 <p class="fr-header__service-tagline">Facilite le parcours des producteurs<br />d'énergies renouvelables électriques</p>
               </div>
             </div>
             <div class="fr-header__tools">
               <div class="fr-header__tools-links">
-                <ul class="fr-links-group">
-                            <li class="fr-shortcuts__item">
-                <a
-                class="fr-link"
-                  href="${properties.potentielUrl}/logout"
-                >
-                  <svg height="1em" width="1em" style="fill: #000091">
-                    <use xlink:href="#ri-logout-box-r-line"></use>
-                  </svg>  
-                    Me déconnecter
-                </a>
-              </li>
+                <ul class="fr-btns-group">
                   <li>
-                    <a class="fr-link" target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Aide</a>
+                    <a class="fr-btn fr-icon-logout-box-r-line fr-btn--icon-right" href="${properties.potentielUrl}/logout">
+                      Me déconnecter
+                    </a>
+                  </li>
+                  <li>
+                    <a class="fr-btn fr-icon-add-circle-line" target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Aide</a>
                   </li>
                 </ul>
               </div>
@@ -67,28 +59,24 @@
           </div>
         </div>
       </div>
-      <div class="fr-header__menu fr-modal" id="modal-499" aria-labelledby="button-500">
-        <div class="fr-container">
-            <button class="fr-btn--close fr-btn" aria-controls="modal-499" title="Fermer">
-                Fermer
-            </button>
-            <div class="fr-header__menu-links">
-            </div>
-            <nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
-              <ul class="fr-nav__list">
-                <li class="fr-nav__item">
-                  <a class="fr-nav__link  <#if active=='account'>text-blue-800 font-medium border-0 border-l-4 border-solid border-blue-800 lg:border-l-0 lg:border-b-2</#if>" href="${url.accountUrl}" target="_self" <#if active=='account'>aria-current="page"</#if>>${msg("account")}</a>
-                </li>
-                <#if features.passwordUpdateSupported>
-                <li class="fr-nav__item">
-                  <a class="fr-nav__link <#if active=='password'></#if>" href="${url.passwordUrl}" target="_self" <#if active=='password'>aria-current="page"</#if>>${msg("password")}</a>
-                </li>
-                </#if>
-                <li class="fr-nav__item">
-                  <a class="fr-nav__link <#if active=='totp'></#if>" href="${url.totpUrl}#top" target="_self" <#if active=='totp'>aria-current="page"</#if>>${msg("authenticator")}</a>
-                </li>
-              </ul>
-            </nav>
+      <div class="fr-header__menu fr-modal" id="modal-491" aria-labelledby="button-492">
+        <div class="fr-container"> <button class="fr-btn--close fr-btn" aria-controls="modal-491" title="Fermer"> Fermer </button>
+          <div class="fr-header__menu-links"> </div>
+          <nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
+            <ul class="fr-nav__list">
+              <li class="fr-nav__item">
+                <a class="fr-nav__link  <#if active=='account'>text-blue-800 font-medium border-0 border-l-4 border-solid border-blue-800 lg:border-l-0 lg:border-b-2</#if>" href="${url.accountUrl}" target="_self" <#if active=='account'>aria-current="page"</#if>>${msg("account")}</a>
+              </li>
+              <#if features.passwordUpdateSupported>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link <#if active=='password'></#if>" href="${url.passwordUrl}" target="_self" <#if active=='password'>aria-current="page"</#if>>${msg("password")}</a>
+              </li>
+              </#if>
+              <li class="fr-nav__item">
+                <a class="fr-nav__link <#if active=='totp'></#if>" href="${url.totpUrl}#top" target="_self" <#if active=='totp'>aria-current="page"</#if>>${msg("authenticator")}</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
@@ -160,6 +148,8 @@
         </div>
       </footer>
       </div>
+          <script src="${url.resourcesCommonPath}/js/dsfr.module.min.js" type="module"></script>
+    <script src="${url.resourcesCommonPath}/js/dsfr.nomodule.min.js" type="text/javascript" nomodule></script>
     </body>
   </html>
 </#macro>
