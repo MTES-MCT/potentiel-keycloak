@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false showAnotherWayIfPresent=true>
+<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false showAnotherWayIfPresent=true title="Potentiel">
   <!DOCTYPE html>
   <html itemscope itemtype="http://schema.org/WebPage" lang="fr">
     <head>
@@ -6,7 +6,7 @@
       <meta name="robots" content="noindex, nofollow">
       <meta http-equiv="x-ua-compatible" content="ie=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Potentiel - Suivi des Projets d'Energies Renouvelables</title>
+      <title>${title} - Potentiel</title>
       <#if properties.stylesCommon?has_content>
         <#list properties.stylesCommon?split(' ') as style>
               <link href="${url.resourcesCommonPath}/${style}" rel="stylesheet" />

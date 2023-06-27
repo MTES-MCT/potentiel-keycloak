@@ -1,4 +1,4 @@
-<#macro mainLayout active bodyClass>
+<#macro mainLayout active bodyClass title="Potentiel">
   <!doctype html>
   <html data-fr-js="true" lang="fr">
 
@@ -19,7 +19,7 @@
     </#if>
 
     <title>
-      ${msg("accountManagementTitle")}
+      ${title} - Potentiel
     </title>
   </head>
   <body class="admin-console user min-h-screen flex flex-col">

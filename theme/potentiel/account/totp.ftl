@@ -1,5 +1,5 @@
 <#import "template.ftl" as layout>
-<@layout.mainLayout active='totp' bodyClass='totp'; section>
+<@layout.mainLayout active='totp' bodyClass='totp' title=msg("authenticatorTitle"); section>
   <h2 id="top">${msg("authenticatorTitle")}</h2>
 
   <#if totp.enabled>

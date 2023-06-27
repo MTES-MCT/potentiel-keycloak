@@ -1,5 +1,5 @@
 <#import "template.ftl" as layout>
-<@layout.mainLayout active='password' bodyClass='password'; section>
+<@layout.mainLayout active='password' bodyClass='password' title=msg("changePasswordHtmlTitle"); section>
   <form action="${url.passwordUrl}"  class="${properties.kcFormClass!}" method="post">
       <h2>${msg("changePasswordHtmlTitle")}</h2>
         <#if message?has_content>

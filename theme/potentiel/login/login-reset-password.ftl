@@ -1,5 +1,5 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=true displayMessage=!messagesPerField.existsError('username'); section>
+<@layout.registrationLayout displayInfo=true title=msg("emailForgotTitle") displayMessage=!messagesPerField.existsError('username'); section>
   <#if section = "header">
       ${msg("emailForgotTitle")}
   <#elseif section = "form">

@@ -1,5 +1,5 @@
 <#import "template.ftl" as layout>
-<@layout.mainLayout active='account' bodyClass='user'; section>
+<@layout.mainLayout active='account' bodyClass='user' title=msg("editAccountHtmlTitle"); section>
   <form action="${url.accountUrl}" class="${properties.kcFormClass!}" method="post">
     <h2 class="fr-mb-4v">${msg("editAccountHtmlTitle")}</h2>
     <#--  <span class="required">*</span> ${msg("requiredFields")}</span>  -->
