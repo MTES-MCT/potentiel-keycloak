@@ -51,7 +51,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="fr-btn fr-icon-add-circle-line" target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Aide</a>
+                    <a class="fr-btn fr-icon-add-circle-line" target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/guide-dutilisation/sommaire-du-guide-dutilisation">Aide</a>
                   </li>
                 </ul>
               </div>

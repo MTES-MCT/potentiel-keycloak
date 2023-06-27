@@ -41,7 +41,7 @@
               <div class="fr-header__tools">
                 <div class="fr-header__tools-links">
                   <ul class="fr-btns-group">
-                    <li><a class="fr-btn fr-icon-add-circle-line"  target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Aide</a></li>
+                    <li><a class="fr-btn fr-icon-add-circle-line"  target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/guide-dutilisation/sommaire-du-guide-dutilisation">Aide</a></li>
                   </ul>
                 </div>
               </div>
