@@ -4,11 +4,6 @@ Keycloak est un service open source d'identité et de gestion d'accès.
 Cette page a pour but d'expliquer la configuration et l'usage de keycloak dans le cadre de Potentiel.
 Vous pouvez aussi lire la [documentation officielle de Keycloak](https://www.keycloak.org/documentation).
 
-Il existe deux environnements pour keycloak :
-
-- Une version "legacy" est situé dans le repo [potentiel](https://github.com/MTES-MCT/potentiel); cet environnement est utilisé à des fins de tests en local **uniquement**
-- Une version de production (ici) partagée entre les environnements de `staging` et `production`.
-
 ## Sommaire
 
 - [Système d'authentification avec Keycloak](#système-dauthentification-avec-keycloak)
