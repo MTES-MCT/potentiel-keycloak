@@ -15,10 +15,9 @@ Il existe deux environnements pour keycloak :
   - [Sommaire](#sommaire)
   - [Mise en oeuvre](#mise-en-oeuvre)
   - [Mise à jour du thème](#mise-à-jour-du-thème)
-  - [Configuration de l'authentification à double facteur pour un role précis](#configuration-de-lauthentification-à-double-facteur-pour-un-role-précis)
-    - [Créer un nouveau flow `Browser`](#créer-un-nouveau-flow-browser)
-    - [Affecter le flow Browser au flow nouvellement créé](#affecter-le-flow-browser-au-flow-nouvellement-créé)
-  - [Ajouter une configuration 2FA pour un nouveau rôle](#ajouter-une-configuration-2fa-pour-un-nouveau-rôle)
+  - [Créer un nouveau flow `Browser`](#créer-un-nouveau-flow-browser)
+  - [Activer la configuration avec OTP (2FA) en local](#activer-la-configuration-avec-otp-2fa-en-local)
+  - [Configurer l'envoi d'email en local](#configurer-lenvoi-demail-en-local)
   - [Déployer une modification en production](#déployer-une-modification-en-production)
 
 Pour en savoir plus sur l'utilisation en local, veuillez vous rendre sur la page [`https://github.com/MTES-MCT/potentiel/docs/KEYCLOAK.md`](https://github.com/MTES-MCT/potentiel/blob/master/docs/KEYCLOAK.md)
@@ -43,11 +42,7 @@ Tous les mails d'authentification (invitation initiale, récupération de mot de
 
 Afin de brander keycloak aux couleurs de Potentiel, nous avons créer un theme `potentiel` qui contient tous les templates nécessaire au bon fonctionnement du système. Si vous avez besoin de mettre à jour le contenu ou la structure d'une page keycloak, ce sera dans ce dossier `themes/potentiel`.
 
-## Configuration de l'authentification à double facteur pour un role précis
-
-Pour se faire il faut se rendre dans la partie `Authentification` du realm concerné.
-
-### Créer un nouveau flow `Browser`
+## Créer un nouveau flow `Browser`
 
 1. Dans le menu `Authentication`
 1. Dans l'onglet `Flows`
@@ -60,22 +55,38 @@ Pour se faire il faut se rendre dans la partie `Authentification` du realm conce
    - Sélectionner le role voulu dans l'option `Force OTP for Role`
    - Sélectionner `skip` dans l'option `Fallback OTP handling`
 
-### Affecter le flow Browser au flow nouvellement créé
 
-1. Dans l'onglet `Bindings`
-1. Sélectionner le flow `Browser with OTP for role` pour l'option `Browser Flow`
-1. Sauvegarder
+## Activer la configuration avec OTP (2FA) en local
 
-Désormais les utilisateurs avec le rôle spécifiés dans l'exécution `Browser - Conditional OTP` devront configurer une application comme FreeOTP ou Google Authenticator pour se connecter à Potentiel.
+Par défaut, lors de l’import du realm, le flow de connexion browser n'utilise pas l’OTP. Pour activer cette authentification à double facteur, il suffit de suivre ces étapes : 
 
-## Ajouter une configuration 2FA pour un nouveau rôle
+- Aller dans le realm concerné, puis sur « Authentification »
+- Cliquer sur les trois petites points de la ligne « browser » et choisir « Bind Flow »
+- Sélectionner ensuite « browser with OTP required » et enregistrer
 
-Si la configutation de l'authentification à double facteur a déjà été créée, pour ajouter un nouveau rôle il suffit de cliquer sur l'option `Authentication` du menu latéral, dans l'onglet `Flows` à l'aide du menu déroulant sélectionner `Browser with OTP Required`, au niveau de la ligne `Browser With OTP Required Forms` dans les `actions`, choisir `add flow`. Nommer le flow de cette façon `Conditional OTP Form (OTP Required for [ROLE])`.
-Dans les actions de la ligne nouvellement créée, choisir la `config` dans les actions :
+La configuration est maintenant activée. Si vous vous connectez avec un profil administrateur vous aurez la page de configuration de l'authentification à double facteur.
 
-- `Force OTP for Role` : choisir le rôle
-- `Fallback OTP handling` : skip
-- et enfin sauvegarger.
+N.B : Par défaut, les rôles qui ont le 2FA d'activé sont :
+- administrateur
+- dgec-validateur
+- cre
+- acheteur-obligé
+
+Si vous avez besoin d'ajouter un nouveau rôle, il faudra : 
+- éditer le flow "browser with OTP required"
+- ajouter un sous-step de type "Condtionnal OTP Form" au step "browser with OTP required forms"
+- Selectionner le rôle concerné dans "Force OTP for Role"
+- enregistrer
+
+## Configurer l'envoi d'email en local
+
+Pour pouvoir tester les emails dans l’environnement local, il faut au préalable avoir importé le realm. Ensuite, il suffit de suivre ces étapes : 
+
+- Aller dans les paramètres du royaume (Realm settings) > onglet  « Email »
+- Renseigner toutes les informations « From », « Host » et « Port », « Enable StartTLS » en se basant sur ce que l’on trouve en [production](https://auth.potentiel.beta.gouv.fr/admin/master/console/#/realms/Potentiel/smtp-settings) 
+- Activer l’authentification et renseigner les credentials de connexion (penser à avoir dans son fichier d’environnement les variables `MJ_APIKEY_PUBLIC` et `MJ_APIKEY_PRIVATE`
+
+Si besoin vous pouvez tester la connexion en suivant les étapes proposées sur l’interface.
 
 ## Déployer une modification en production
 
