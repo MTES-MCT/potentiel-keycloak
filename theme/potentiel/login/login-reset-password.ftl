@@ -1,40 +1,33 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=true displayMessage=!messagesPerField.existsError('username'); section>
-    <#if section = "header">
-        ${msg("emailForgotTitle")}
-    <#elseif section = "form">
-        <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-            <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="username" class="${properties.kcLabelClass!}">Courrier électronique</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <#if auth?has_content && auth.showUsername()>
-                        <input type="text" id="username" name="username" class="${properties.kcInputClass!}" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                    <#else>
-                        <input type="text" id="username" name="username" class="${properties.kcInputClass!}" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                    </#if>
+<@layout.registrationLayout displayInfo=true title=msg("emailForgotTitle") displayMessage=!messagesPerField.existsError('username'); section>
+  <#if section = "header">
+      ${msg("emailForgotTitle")}
+  <#elseif section = "form">
+    <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
+        <div class="${properties.kcFormGroupClass!}">
+            <a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a>
 
-                    <#if messagesPerField.existsError('username')>
-                        <span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('username'))?no_esc}
-                        </span>
-                    </#if>
-                </div>
+            <p class="fr-mt-8v">Entrez votre courrier électronique; un email va vous être envoyé vous permettant de créer un nouveau mot de passe.</p>
+            <div class="${properties.kcFormGroupClass!} <#if messagesPerField.existsError('username')>fr-input-group--error</#if>">
+              <label for="username" class="${properties.kcLabelClass!}">Courrier électronique</label>
+              <#if auth?has_content && auth.showUsername()>
+                <input type="email" id="username" name="username" class="${properties.kcInputClass!}" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
+              <#else>
+                <input type="email" id="username" name="username" class="${properties.kcInputClass!}" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
+              </#if>
+              <#if messagesPerField.existsError('username')>
+                <p id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                  Veuillez entrer votre courrier électronique
+                </p>
+              </#if>
             </div>
-            <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                        <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
-                    </div>
-                </div>
-
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
-                </div>
+        </div>
+        <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
+            <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
+                <input class="${properties.kcButtonClass!}" type="submit" value="${msg("doSubmit")}"/>
             </div>
-        </form>
-    <#elseif section = "info" >
-        ${msg("emailInstruction")}
-    </#if>
+        </div>
+    </form>
+  <#elseif section = "info" >
+  </#if>
 </@layout.registrationLayout>
