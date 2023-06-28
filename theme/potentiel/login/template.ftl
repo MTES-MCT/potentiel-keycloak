@@ -41,7 +41,7 @@
               <div class="fr-header__tools">
                 <div class="fr-header__tools-links">
                   <ul class="fr-btns-group">
-                    <li><a class="fr-btn fr-icon-add-circle-line"  target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Aide</a></li>
+                    <li><a class="fr-btn fr-icon-add-circle-line"  target="_blank" rel="noopener" href="https://docs.potentiel.beta.gouv.fr/guide-dutilisation/sommaire-du-guide-dutilisation">Aide</a></li>
                   </ul>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                 </li>
                 <li class="fr-footer__bottom-item">
                   <a class="fr-footer__bottom-link"
-                    href="https://docs.potentiel.beta.gouv.fr/info/guide-dutilisation-potentiel">Guide d'utilisation</a>
+                    href="https://docs.potentiel.beta.gouv.fr/">Guide d'utilisation</a>
                 </li>
                 <li class="fr-footer__bottom-item">
                   <a class="fr-footer__bottom-link" href="${properties.potentielUrl}/stats.html">Statistiques</a>
