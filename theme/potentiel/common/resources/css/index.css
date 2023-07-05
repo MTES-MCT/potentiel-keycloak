@@ -2,6 +2,25 @@
 * CUSTOM
 */
 
+/* Flex */
+.items-center {
+  justify-content: center;
+}
+
+/* Size */
+.w-fit {
+  width: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* Display */
+.block {
+  display: block;
+}
+
 /* Text */
 .text-black {
   color: black;
