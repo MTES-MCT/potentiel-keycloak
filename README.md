@@ -14,6 +14,7 @@ Vous pouvez aussi lire la [documentation officielle de Keycloak](https://www.key
   - [Activer la configuration avec OTP (2FA) en local](#activer-la-configuration-avec-otp-2fa-en-local)
   - [Configurer l'envoi d'email en local](#configurer-lenvoi-demail-en-local)
   - [Déployer une modification en production](#déployer-une-modification-en-production)
+  - [Mettre à jour la version de Keycloak](#mettre-à-jour-la-version-de-keycloak)
 
 Pour en savoir plus sur l'utilisation en local, veuillez vous rendre sur la page [`https://github.com/MTES-MCT/potentiel/docs/KEYCLOAK.md`](https://github.com/MTES-MCT/potentiel/blob/master/docs/KEYCLOAK.md)
 
@@ -40,13 +41,13 @@ Afin de brander keycloak aux couleurs de Potentiel, nous avons créer un theme `
 ## Créer un nouveau flow `Browser`
 
 1. Dans le menu `Authentication`
-1. Dans l'onglet `Flows`
-1. Faire une copie du flow `Browser` avec par exemple le nom `Browser with OTP for role`
-1. Supprimer la partie `Browser - Conditional OTP`
-1. Au niveau de l'étape `Browser with OTP for role`, supprimer l'exécution `Browser - Conditional OTP`
-1. Ajouter une nouvelle exécution de type `Conditional OTP Form`
-1. Modifer cette exécution pour être `REQUIRED`
-1. Modifier la config de l'exécution :
+2. Dans l'onglet `Flows`
+3. Faire une copie du flow `Browser` avec par exemple le nom `Browser with OTP for role`
+4. Supprimer la partie `Browser - Conditional OTP`
+5. Au niveau de l'étape `Browser with OTP for role`, supprimer l'exécution `Browser - Conditional OTP`
+6. Ajouter une nouvelle exécution de type `Conditional OTP Form`
+7. Modifer cette exécution pour être `REQUIRED`
+8. Modifier la config de l'exécution :
    - Sélectionner le role voulu dans l'option `Force OTP for Role`
    - Sélectionner `skip` dans l'option `Fallback OTP handling`
 
@@ -93,3 +94,23 @@ Ce repo dispose d'une automatisation de mise en production sur notre hébergeur 
 - avoir ajouté dans les remotes git l'url du repo fourni par Scalingo ([ici](https://dashboard.scalingo.com/apps/osc-secnum-fr1/keycloak-potentiel/deploy/config))
 - lancer la commande (depuis un terminal local) : `git push **nom_remote** main:master`
   (exemple : `git push scalingo main:master`)
+
+## Mettre à jour la version de Keycloak
+
+Afin d'éviter toute faille de sécurité il est important de faire la mise à jour de Keycloak sur le serveur.
+Pour celà, il faut suivre les étapes suivantes : 
+
+1. Mettre à jour la version du [docker compose](https://github.com/MTES-MCT/potentiel/blob/a7f3fbe59a26542501d8ce2e32615e4d7d867f33/docker-compose.yml#L43C35-L43C35) en ajoutant la version à la fin du nom de l'image. Exemple : `quay.io/keycloak/keycloak:23.0.4`
+2. Mettre à jour les dépendances keycloak du projet
+  ```
+  npm i @keycloak/keycloak-admin-client@latest
+  npm i keycloak-connect@latest 
+  ``` 
+3. Mettre à jour le repo potentiel-keycloak depuis le projet potentiel
+   ```
+   git submodule sync
+   git submodule update --init
+   ```
+4. Mettre à jour le container sur [scalingo](https://dashboard.scalingo.com/apps/osc-secnum-fr1/keycloak-potentiel/environment)
+  - Changer la variable d'environnement `KEYCLOAK_VERSION`
+  - relancer le process scalingo
