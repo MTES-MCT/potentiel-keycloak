@@ -10,6 +10,8 @@ Vous pouvez aussi lire la [documentation officielle de Keycloak](https://www.key
   - [Sommaire](#sommaire)
   - [Mise en oeuvre](#mise-en-oeuvre)
   - [Mise à jour du thème](#mise-à-jour-du-thème)
+    - [Initier le submodule dans le repo Potentiel](#initier-le-submodule-dans-le-repo-potentiel)
+    - [ Mettre à jour le submodule une fois initié](#-mettre-à-jour-le-submodule-une-fois-initié)
   - [Créer un nouveau flow `Browser`](#créer-un-nouveau-flow-browser)
   - [Activer la configuration avec OTP (2FA) en local](#activer-la-configuration-avec-otp-2fa-en-local)
   - [Configurer l'envoi d'email en local](#configurer-lenvoi-demail-en-local)
@@ -36,7 +38,19 @@ Tous les mails d'authentification (invitation initiale, récupération de mot de
 
 ## Mise à jour du thème
 
-Afin de brander keycloak aux couleurs de Potentiel, nous avons créer un theme `potentiel` qui contient tous les templates nécessaire au bon fonctionnement du système. Si vous avez besoin de mettre à jour le contenu ou la structure d'une page keycloak, ce sera dans ce dossier `themes/potentiel`.
+Afin de brander keycloak aux couleurs de Potentiel, nous avons créer un theme `potentiel` qui contient tous les templates nécessaire au bon fonctionnement du système. Si vous avez besoin de mettre à jour le contenu ou la structure d'une page keycloak, ce sera dans ce dossier `themes/potentiel`. Ce dossier est ensuite utilisé comme un [gitsubmodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) dans le [repo potentiel](https://github.com/MTES-MCT/potentiel)
+
+### Initier le submodule dans le repo Potentiel
+```
+git submodule sync
+git submodule update --init
+```
+
+### <a id="maj-submodule"></a> Mettre à jour le submodule une fois initié
+
+1. Depuis le repo Potentiel, naviguer dans le répertoire du submodule `cd keycloak/potentiel-keycloak`
+2. Se mettre sur la branche `main` et faire un `git pull`
+3. Ajouter et commit le fichier généré 
 
 ## Créer un nouveau flow `Browser`
 
@@ -100,17 +114,13 @@ Ce repo dispose d'une automatisation de mise en production sur notre hébergeur 
 Afin d'éviter toute faille de sécurité il est important de faire la mise à jour de Keycloak sur le serveur.
 Pour celà, il faut suivre les étapes suivantes : 
 
-1. Mettre à jour la version du [docker compose](https://github.com/MTES-MCT/potentiel/blob/a7f3fbe59a26542501d8ce2e32615e4d7d867f33/docker-compose.yml#L43C35-L43C35) en ajoutant la version à la fin du nom de l'image. Exemple : `quay.io/keycloak/keycloak:23.0.4`
-2. Mettre à jour les dépendances keycloak du projet
+1. Mettre à jour les dépendances keycloak du projet
   ```
   npm i @keycloak/keycloak-admin-client@latest
   npm i keycloak-connect@latest 
   ``` 
-3. Mettre à jour le repo potentiel-keycloak depuis le projet potentiel
-   ```
-   git submodule sync
-   git submodule update --init
-   ```
-4. Mettre à jour le container sur [scalingo](https://dashboard.scalingo.com/apps/osc-secnum-fr1/keycloak-potentiel/environment)
-  - Changer la variable d'environnement `KEYCLOAK_VERSION`
+2. Vérifier que le submodule est à jour ([cf](#mettre-à-jour-le-submodule-une-fois-initié))
+
+2. Mettre à jour le container sur [scalingo](https://dashboard.scalingo.com/apps/osc-secnum-fr1/keycloak-potentiel/environment)
+  - Changer la version de la variable d'environnement `KEYCLOAK_VERSION`
   - relancer le process scalingo
