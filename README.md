@@ -38,7 +38,7 @@ Tous les mails d'authentification (invitation initiale, récupération de mot de
 
 ## Mise à jour du thème
 
-Afin de brander keycloak aux couleurs de Potentiel, nous avons créer un theme `potentiel` qui contient tous les templates nécessaire au bon fonctionnement du système. Si vous avez besoin de mettre à jour le contenu ou la structure d'une page keycloak, ce sera dans ce dossier `themes/potentiel`. Ce dossier est ensuite utilisé comme un [gitsubmodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) dans le [repo potentiel](https://github.com/MTES-MCT/potentiel)
+Afin de brander keycloak aux couleurs de Potentiel, nous avons créé un thème `potentiel` qui contient tous les templates nécessaires au bon fonctionnement du système. 
 
 ### Initier le submodule dans le repo Potentiel
 ```
