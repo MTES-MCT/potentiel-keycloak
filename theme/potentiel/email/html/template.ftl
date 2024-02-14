@@ -197,14 +197,14 @@
 																		<div style="font-family:Arial, sans-serif;font-size:14px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;">
 																			<#nested "outro">
 																			<p class="text-build-content" data-testid="I0ETIbJm4" style="margin: 10px 0; margin-top: 10px;">
-																				<b>Potentiel est un service du Ministère de la Transition Énergétique. Cette plateforme en développement continu permet la gestion des projets photovoltaïques et éoliens soutenus par les appels d’offres de l’État.</b>
+																				<b>Potentiel est un service du Ministère en charge de l'énergie. Cette plateforme en développement continu permet la gestion des projets photovoltaïques et éoliens soutenus par les appels d’offres de l’État.</b>
 																			</p>
 																			<p class="text-build-content" data-testid="I0ETIbJm4" style="margin: 10px 0;">
 																				Cordialement,
 																			</p>
 																			<p class="text-build-content" data-testid="I0ETIbJm4" style="margin: 10px 0; margin-bottom: 10px;">
 																				<br>
-																				Ministère de la Transition Énergétique (MTE)&nbsp;
+																				Ministère de l'économie, des finances et de la souveraineté industrielle et numérique&nbsp;
 																				<br>
 																				Direction Générale de l'Energie et du Climat (DGEC)&nbsp;
 																				<br>
