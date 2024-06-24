@@ -130,15 +130,21 @@
                 <a class="fr-footer__bottom-link" href="https://docs.potentiel.beta.gouv.fr/info/cgu">Mentions légales</a>
               </li>
               <li class="fr-footer__bottom-item">
+                <a class="fr-footer__bottom-link" href="https://docs.potentiel.beta.gouv.fr/info/conditions-generales-dutilisation">
+                  Conditions générales d'utilisation
+                </a>
+              </li>
+              <li class="fr-footer__bottom-item">
+                <a class="fr-footer__bottom-link" href="https://docs.potentiel.beta.gouv.fr/info/vie-privee-et-politique-de-confidentialite">
+                  Politique de confidentialité
+                </a>
+              </li>
+              <li class="fr-footer__bottom-item">
                 <a class="fr-footer__bottom-link"
                   href="https://docs.potentiel.beta.gouv.fr/">Guide d'utilisation</a>
               </li>
               <li class="fr-footer__bottom-item">
                 <a class="fr-footer__bottom-link" href="${properties.potentielUrl}/stats.html">Statistiques</a>
-              </li>
-              <li class="fr-footer__bottom-item">
-                <a class="fr-footer__bottom-link" href="https://docs.potentiel.beta.gouv.fr/info/cgu#cookies">Gestion des
-                  cookies</a>
               </li>
             </ul>
             <div class="fr-footer__bottom-copy">
