@@ -95,6 +95,9 @@ Ce repo dispose d'une automatisation de mise en production sur notre hébergeur 
 - lancer la commande (depuis un terminal local) : `git push **nom_remote** main:master`
   (exemple : `git push scalingo main:master`)
 
+
+> ⚠️ Il est possible que suite à un déploiement le thème keycloak DSFR ne soit pas trouvé, dans le cas là il sera nécessaire de refaire un déploiement manuel ⚠️
+
 ## Mettre à jour la version de Keycloak
 
 Afin d'éviter toute faille de sécurité il est important de faire la mise à jour de Keycloak sur le serveur.
