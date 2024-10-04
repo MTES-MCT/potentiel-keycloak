@@ -206,7 +206,7 @@
 																				<br>
 																				Ministère chargé de l'énergie&nbsp;
 																				<br>
-																				Direction Générale de l'Énergie et du Climat (DGEC)&nbsp;
+																				Direction générale de l'énergie et du climat (DGEC)&nbsp;
 																				<br>
 																				Sous-Direction des systèmes électriques et des énergies renouvelables (SD3)&nbsp;
 																				<br>
