@@ -204,7 +204,7 @@
 																			</p>
 																			<p class="text-build-content" data-testid="I0ETIbJm4" style="margin: 10px 0; margin-bottom: 10px;">
 																				<br>
-																				Ministère de l'économie, des finances et de la souveraineté industrielle et numérique&nbsp;
+																				Ministère chargé de l'énergie&nbsp;
 																				<br>
 																				Direction Générale de l'Energie et du Climat (DGEC)&nbsp;
 																				<br>
