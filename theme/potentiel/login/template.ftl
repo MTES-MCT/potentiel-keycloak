@@ -32,7 +32,7 @@
                       aria-controls="modal-499" aria-haspopup="menu" id="button-500" title="Menu"> Menu </button> </div>
                 </div>
                 <div class="fr-header__service"> <a href="${properties.potentielUrl}"
-                    title="Accueil - Potentiel - Ministère de l'économie, des finances et de la souveraineté industrielle et numérique">
+                    title="Accueil - Potentiel - Ministère chargé de l'énergie">
                     <p class="fr-header__service-title">Potentiel</p>
                   </a>
                   <p class="fr-header__service-tagline">Facilite le parcours des producteurs<br />d'énergies renouvelables électriques</p>
@@ -70,10 +70,7 @@
               <div class="fr-footer__brand fr-enlarge-link">
                 <p class="fr-logo" title="république française">
                   Ministère<br />
-                  de l'économie,<br />
-                  des finances<br /> 
-                  et de la souveraineté<br />
-                  industrielle et numérique
+                  chargé de l'énergie
                 </p>
               </div>
               <div class="fr-footer__content">
