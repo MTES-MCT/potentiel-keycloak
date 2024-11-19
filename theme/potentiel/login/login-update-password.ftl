@@ -7,9 +7,9 @@
         <form id="kc-passwd-update-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
 
             <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcAlertInfoClass!}">
-                    ${msg("passwordRules")}
-                </div>
+              <div class="${properties.kcAlertClass!} ${properties.kcAlertInfoClass!}">
+                  ${kcSanitize(msg("passwordRules"))?no_esc}
+              </div>
             </div>
 
             <div class="${properties.kcFormGroupClass!}">
