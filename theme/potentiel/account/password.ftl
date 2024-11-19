@@ -29,7 +29,7 @@
       </#if>
 
       <div class="${properties.kcFormGroupClass!} ${properties.kcAlertInfoClass!}">
-        ${msg("passwordRules")}
+        ${kcSanitize(msg("passwordRules"))}
       </div>
 
       <div class="${properties.kcFormGroupClass!}">
