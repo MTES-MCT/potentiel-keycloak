@@ -28,10 +28,6 @@
           </div>
       </#if>
 
-      <div class="${properties.kcFormGroupClass!} ${properties.kcAlertInfoClass!}">
-        ${kcSanitize(msg("passwordRules"))}
-      </div>
-
       <div class="${properties.kcFormGroupClass!}">
         <label for="password-new" class="${properties.kcLabelClass!}">${msg("passwordNew")}</label>
         <input type="password" class="${properties.kcInputClass!}" id="password-new" name="password-new" autocomplete="new-password">

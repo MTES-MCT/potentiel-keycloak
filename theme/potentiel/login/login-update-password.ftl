@@ -12,22 +12,6 @@
                 </div>
             </div>
 
-        <#if message?has_content>
-          <#if message.type=='error'>
-            <div class="${properties.kcAlertClass!} ${properties.kcAlertErrorClass!} fr-mb-8v">
-              ${kcSanitize(message.summary)?no_esc}
-            </div>
-          <#elseif message.type=='warning'>
-              <div class="${properties.kcAlertClass!} ${properties.kcAlertWarningClass!} fr-mb-8v">
-                ${kcSanitize(message.summary)?no_esc}
-              </div>
-          <#else>
-            <div class="${properties.kcAlertClass!} ${properties.kcAlertSuccessClass!} fr-mb-8v">
-              ${kcSanitize(message.summary)?no_esc}
-            </div>
-          </#if>
-        </#if>
-
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="password-new" class="${properties.kcLabelClass!}">${msg("passwordNew")}</label>
@@ -55,9 +39,9 @@
                 <div class="${properties.kcInputWrapperClass!}">
                     <div class="${properties.kcInputGroup!}" dir="ltr">
                         <input type="password" id="password-confirm" name="password-confirm"
-                               class="${properties.kcInputClass!}"
-                               autocomplete="new-password"
-                               aria-invalid="<#if messagesPerField.existsError('password-confirm')>true</#if>"
+                              class="${properties.kcInputClass!}"
+                              autocomplete="new-password"
+                              aria-invalid="<#if messagesPerField.existsError('password-confirm')>true</#if>"
                         />
                     </div>
 
