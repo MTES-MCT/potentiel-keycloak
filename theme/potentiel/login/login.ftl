@@ -13,7 +13,7 @@
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
               <#if message?has_content>
                 <#if message.type=='error'>
-                  <div class="${properties.kcAlertClass!} ${properties.kcAlertErrorClass!}">
+                  <div class="${properties.kcAlertClass!} ${properties.kcAlertErrorClass!} fr-my-4v">
                     ${kcSanitize(message.summary)?no_esc}
                   </div>
                   <#elseif message.type=='warning'>
