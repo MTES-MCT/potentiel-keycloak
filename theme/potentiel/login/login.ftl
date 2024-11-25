@@ -16,7 +16,6 @@
                   <div class="${properties.kcAlertClass!} ${properties.kcAlertErrorClass!}">
                     ${kcSanitize(message.summary)?no_esc}
                   </div>
-                  <div class="${properties.kcAlertClass!} ${properties.kcAlertWarningClass!} fr-my-4v">Pour des raisons de sécurité, les mots de passes ont été remis à zéro le 7 octobre. Si vous n'avez pas mis à jour votre mot de passe depuis cette date, merci d'utiliser le lien "Mot de passe oublié".</div>
                   <#elseif message.type=='warning'>
                     <div class="${properties.kcAlertClass!} ${properties.kcAlertWarningClass!}">
                       ${kcSanitize(message.summary)?no_esc}
