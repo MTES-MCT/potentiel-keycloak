@@ -167,7 +167,7 @@
 															<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
 																<tr>
 																	<td align="left" style="font-size:0px;padding:0px 25px 0px 25px;padding-top:0px;padding-bottom:0px;word-break:break-word;">
-																		<div style="font-family:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;">
+																		<div style="font-family:Arial, sans-serif;font-size:14px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;">
 																			<p class="text-build-content" style="margin: 10px 0; margin-top: 10px; margin-bottom: 10px;">
 																				Madame, Monsieur,
 																			</p>
