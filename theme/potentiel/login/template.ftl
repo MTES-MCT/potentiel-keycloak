@@ -69,8 +69,7 @@
             <div class="fr-footer__body">
               <div class="fr-footer__brand fr-enlarge-link">
                 <p class="fr-logo" title="république française">
-                  Ministère<br />
-                  chargé de l'énergie
+                  Gouvernement
                 </p>
               </div>
               <div class="fr-footer__content">
