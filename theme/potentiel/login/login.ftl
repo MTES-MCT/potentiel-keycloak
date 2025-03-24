@@ -57,7 +57,7 @@
           </#if>
         </div>
         <h2>Vous n'avez pas de compte ?</h2>
-        <a href="${properties.potentielUrl}/signup.html" class="fr-btn fr-btn--secondary w-full items-center">Je crée mon compte Potentiel</a>
+        <a href="${properties.potentielUrl}/auth/signUp" class="fr-btn fr-btn--secondary w-full items-center">Je crée mon compte Potentiel</a>
       </section>
     <#elseif section="info">
     </#if>
