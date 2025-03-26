@@ -140,7 +140,7 @@
                   href="https://docs.potentiel.beta.gouv.fr/">Guide d'utilisation</a>
               </li>
               <li class="fr-footer__bottom-item">
-                <a class="fr-footer__bottom-link" href="${properties.potentielUrl}/stats.html">Statistiques</a>
+                <a class="fr-footer__bottom-link" href="${properties.potentielUrl}/statistiques-publiques">Statistiques</a>
               </li>
             </ul>
             <div class="fr-footer__bottom-copy">
