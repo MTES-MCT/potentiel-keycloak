@@ -29,7 +29,7 @@
               <div class="${properties.kcFormGroupClass!}">
                 <label for="username" class="${properties.kcLabelClass!}">
                   Identifiant
-                  <span class="fr-hint-text">Le format attendu est votre courrier éléctronique</span>
+                  <span class="fr-hint-text">Le format attendu est votre courrier électronique</span>
                 </label>
                 <#if usernameEditDisabled??>
                   <input id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" disabled />
